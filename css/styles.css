@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: bisque;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 15em);
+  grid-template-rows: repeat(2, 15em);
+  justify-content: center;
+  align-content: center;
+  gap: 1em;
+}
+
+/*Alla tärningar: färg & border-radius & grid*/
+.dice-1,
+.dice-2,
+.dice-3,
+.dice-4,
+.dice-5,
+.dice-6 {
+  background-color: white;
+  box-shadow: 0 0 10px rgb(172, 145, 106);
+  border-radius: 0.4em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/*Alla prickar*/
+aside {
+  background-color: rgb(135, 133, 255);
+  border-radius: 3em;
+  margin: 1em;
+}
+
+/*Definierar grid-arean för varje prick*/
+aside:nth-child(1) {
+  grid-area: aside1;
+}
+
+aside:nth-child(2) {
+  grid-area: aside2;
+}
+
+aside:nth-child(3) {
+  grid-area: aside3;
+}
+
+aside:nth-child(4) {
+  grid-area: aside4;
+}
+
+aside:nth-child(5) {
+  grid-area: aside5;
+}
+
+aside:nth-child(6) {
+  grid-area: aside6;
+}
+
+/*1a tärningen*/
+.dice-1 {
+  grid-template-areas:
+    ". . ."
+    ". aside1 ."
+    ". . .";
+}
+
+/*2:a tärningen*/
+.dice-2 {
+  grid-template-areas:
+    ". . aside1"
+    ". . ."
+    "aside2 . .";
+}
+
+/*3:e tärningen*/
+.dice-3 {
+  grid-template-areas:
+    ". . aside1"
+    ". aside2 ."
+    "aside3 . .";
+}
+
+/*4:e tärningen*/
+.dice-4 {
+  grid-template-areas:
+    "aside1 . aside2"
+    ". . ."
+    "aside3 . aside4";
+}
+
+/*5:e tärningen*/
+.dice-5 {
+  grid-template-areas:
+    "aside1 . aside2"
+    ". aside3 ."
+    "aside4 . aside5";
+}
+
+/*6:e tärningen*/
+.dice-6 {
+  grid-template-areas:
+    "aside1 . aside2"
+    "aside3 . aside4"
+    "aside5 . aside6";
+}
